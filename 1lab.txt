@@ -1,0 +1,100 @@
+
+CREATE TABLE Groups
+(
+	id_group             INTEGER NOT NULL,
+	students             INTEGER NULL,
+	course               INTEGER NULL,
+	name                 VARCHAR(20) NULL
+)
+
+Execution Successful
+
+
+ALTER TABLE Groups
+ADD PRIMARY KEY (id_group)
+
+Execution Successful
+
+
+CREATE TABLE link
+(
+	id_group             INTEGER NULL,
+	student_id           INTEGER NULL
+)
+
+Execution Successful
+
+
+CREATE TABLE Students
+(
+	student_id           INTEGER NOT NULL,
+	id_univ              INTEGER NULL,
+	name                 VARCHAR(20) NULL
+)
+
+Execution Successful
+
+
+ALTER TABLE Students
+ADD PRIMARY KEY (student_id)
+
+Execution Successful
+
+
+CREATE TABLE Top_of_Univ
+(
+	id_univ              INTEGER NOT NULL,
+	number               INTEGER NULL
+)
+
+Execution Successful
+
+
+ALTER TABLE Top_of_Univ
+ADD PRIMARY KEY (id_univ)
+
+Execution Successful
+
+
+CREATE TABLE Univ
+(
+	id_univ              INTEGER NOT NULL,
+	name                 VARCHAR(20) NULL,
+	rector               VARCHAR(20) NULL,
+	students             INTEGER NULL
+)
+
+Execution Successful
+
+
+ALTER TABLE Univ
+ADD PRIMARY KEY (id_univ)
+
+Execution Successful
+
+
+ALTER TABLE link
+ADD CONSTRAINT R_4 FOREIGN KEY (id_group) REFERENCES Groups (id_group)
+
+Execution Successful
+
+
+ALTER TABLE link
+ADD CONSTRAINT R_7 FOREIGN KEY (student_id) REFERENCES Students (student_id)
+
+Execution Successful
+
+
+ALTER TABLE Students
+ADD CONSTRAINT R_6 FOREIGN KEY (id_univ) REFERENCES Univ (id_univ)
+
+Execution Successful
+
+
+ALTER TABLE Top_of_Univ
+ADD CONSTRAINT R_3 FOREIGN KEY (id_univ) REFERENCES Univ (id_univ)
+
+Execution Successful
+
+Schema Generation Complete
+13 query succeeded.  

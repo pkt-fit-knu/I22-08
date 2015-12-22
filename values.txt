@@ -1,0 +1,5 @@
+insert into Univ values (1,'КНУ','Р1',60),(2,'КПІ','Р2',20),(3,'КНЕУ','Р3',30);
+insert into students values (1,1,'Дениска'), (2,2,'Анисимов'), (3,3,'Вася'), (4,3,'Леся'), (5,3,'Петя');
+insert into Top_of_Univ values (1,1), (2,3), (3,2);
+insert into Groups values (1, 12, 2,'I22'), (2,7,1,'I11'), (3,7,2,'ПІ');
+insert into link values (1,1), (1,2), (2,3), (2,4), (3,5);
